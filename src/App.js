@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import axios from 'axios';
+class App extends Component{
 
-function App() {
+constructor (props) {
+  super(props)
+  this.state = {optionsState: 0, values: {countries: []}}
+
+  this.handleChange = this.handleChange.bind(this);
+
+}
+
+handleChange(event) {
+  this.setState({optionsState: parseInt(event.target.value), values: this.state.values});
+}
+
+componentDidMount() {
+    axios.get(`countries.json`)
+    .then(result => {
+      if(result.status === 200)
+        this.setState({optionsState: this.state.optionsState, values: result.data});
+    })
+  
+}
+
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Country list demo</h1>
+      <select name='country' value={this.state.optionsState} onChange={this.handleChange}>
+        {this.state.values.countries.map((object, i) => <option key={i} value={i} >{object.country}</option>)}
+      </select>
+        <p className='capital'>{this.state.values.countries.length ? this.state.values.countries.at(this.state.optionsState).capital : "Could not fetch JSON-file."}</p>
+      
     </div>
   );
+}
+
 }
 
 export default App;

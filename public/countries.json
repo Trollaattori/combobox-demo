@@ -1,0 +1,22 @@
+{
+    "countries": [
+        {"country": "Finland", "capital": "Helsinki" },
+        {"country": "Sweden", "capital": "Stockholm" },
+        {"country": "Denmark", "capital": "Copenhangen" },
+        {"country": "Iceland", "capital": "Reykjavik" },
+        {"country": "Norway", "capital": "Oslo" },
+        {"country": "United Kingdom", "capital": "London" },
+        {"country": "Spain", "capital": "Madrid" },
+        {"country": "Greece", "capital": "Athens" },
+        {"country": "Ukraine", "capital": "Kiev" },
+        {"country": "Germany", "capital": "Berlin" },
+        {"country": "Ireland", "capital": "Dublin" },
+        {"country": "Austria", "capital": "Vienna" },
+        {"country": "Netherlands", "capital": "Amsterdam" },
+        {"country": "France", "capital": "Paris" },
+        {"country": "Italy", "capital": "Rome" },
+        {"country": "Estonia", "capital": "Tallinn" }
+
+
+    ]
+}
